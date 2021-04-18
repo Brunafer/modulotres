@@ -21,7 +21,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start:backend": "cd../server && npm start",
+    "start:backend": "cd ../server && npm start",
     "start:ci": "run-p start:backend start",
     "start:inst": "react-scripts -r @cypress/instrument-cra start",
     "build": "react-scripts build",
