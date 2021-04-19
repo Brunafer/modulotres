@@ -11,9 +11,9 @@ context('Classes endopoint', () => {
             body: {
                 "name":"teste",
                 "avatar":"https://st3.depositphotos.com/3369547/12852/v/950/depositphotos_128525628-stock-illustration-woman-female-avatar-isolated.jpg",
-                "whatsapp":"3199965478",
+                "whatsapp":"3199971039",
                 "bio":"testes bruna",
-                "subject":"Português",
+                "subject":"Inglês",
                 "cost":580,
                 "schedule":[
                      {
@@ -24,7 +24,17 @@ context('Classes endopoint', () => {
                 ]
             }    
         }).then((response) => {
-            //asserções da resposta
+            expect(response.status).to.eq(201)
+            expect(response.duration).lessThan(30)
+
+           //não consegui validar o body pois estava dentro de um array
+
+            expect(response.headers)
+                .to.have.property('content-type')
+                .an('string')
+                .equal('application/json; charset=utf-8')
+
+                                           
         })
         
     });
